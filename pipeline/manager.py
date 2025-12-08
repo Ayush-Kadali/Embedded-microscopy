@@ -8,11 +8,11 @@ from modules import (
     AcquisitionModule,
     PreprocessingModule,
     SegmentationModule,
-    ClassificationModule,
     CountingModule,
     AnalyticsModule,
     ExportModule,
 )
+from modules.classification_real import ClassificationModuleReal
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -47,7 +47,7 @@ class PipelineManager:
                 'acquisition': AcquisitionModule(self.config.get('acquisition', {})),
                 'preprocessing': PreprocessingModule(self.config.get('preprocessing', {})),
                 'segmentation': SegmentationModule(self.config.get('segmentation', {})),
-                'classification': ClassificationModule(self.config.get('classification', {})),
+                'classification': ClassificationModuleReal(self.config.get('classification', {})),
                 'counting': CountingModule(self.config.get('counting', {})),
                 'analytics': AnalyticsModule(self.config.get('analytics', {})),
                 'export': ExportModule(self.config.get('export', {})),

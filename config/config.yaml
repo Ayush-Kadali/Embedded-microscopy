@@ -28,7 +28,7 @@ segmentation:
   model_path: null  # For instance_seg method
 
 classification:
-  model_path: "./models/plankton_classifier_v1.tflite"
+  model_path: "models/plankton_classifier.keras"
   class_names:
     - "Copepod"
     - "Diatom"
@@ -42,7 +42,7 @@ classification:
   # preprocessing: "mobilenet"  # or "resnet", etc.
 
 counting:
-  confidence_threshold: 0.7
+  confidence_threshold: 0.3
   size_range_um: [10, 1000]
   count_by_class: true
 
