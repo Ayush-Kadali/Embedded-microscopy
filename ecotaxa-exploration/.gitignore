@@ -1,0 +1,46 @@
+# EcoTaxa Exploration .gitignore
+
+# Virtual environment
+venv/
+env/
+*.pyc
+__pycache__/
+
+# Credentials (IMPORTANT: Never commit these!)
+.ecotaxa_token
+.env
+credentials.json
+config_local.yaml
+
+# Test images (can be large)
+test_images/*.jpg
+test_images/*.png
+test_images/*.tif
+
+# Results
+results/*.json
+results/*.csv
+results/*.zip
+
+# Jupyter notebooks
+notebooks/.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Downloaded datasets
+datasets/
+data/
+*.h5
+*.tflite
