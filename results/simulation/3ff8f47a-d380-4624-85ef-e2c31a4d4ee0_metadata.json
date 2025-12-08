@@ -1,0 +1,62 @@
+{
+  "sample_id": "3ff8f47a-d380-4624-85ef-e2c31a4d4ee0",
+  "acquisition": {
+    "capture_id": "3ff8f47a-d380-4624-85ef-e2c31a4d4ee0",
+    "timestamp": "2025-12-08T14:49:29.100263",
+    "gps_coordinates": null,
+    "magnification": 2.5,
+    "exposure_ms": 150,
+    "resolution_um_per_px": 0.62,
+    "fov_mm": [
+      1.2573599999999998,
+      1.2573599999999998
+    ],
+    "sensor_temp_c": null,
+    "focus_position": null,
+    "operator_id": "simulation"
+  },
+  "preprocessing": {
+    "mean_intensity": 120.16183927967042,
+    "std_intensity": 50.74344149084147,
+    "snr_db": 7.4877329795955525,
+    "background_level": 51.0
+  },
+  "segmentation": {
+    "num_organisms": 5,
+    "algorithm": "unknown"
+  },
+  "classification": {
+    "num_predictions": 5,
+    "model_metadata": {
+      "model_name": "./models/plankton_classifier_v1.tflite",
+      "version": "1.0.0",
+      "input_size": [
+        224,
+        224
+      ],
+      "inference_time_ms": 1.5518665313720703
+    }
+  },
+  "counting": {
+    "total_count": 5,
+    "counts_by_class": {
+      "Copepod": 5
+    }
+  },
+  "analytics": {
+    "diversity_indices": {
+      "shannon": -1.000000082690371e-10,
+      "simpson": 0.0,
+      "species_richness": 1
+    },
+    "bloom_alerts": []
+  },
+  "visualization_paths": {
+    "original": "results/simulation/3ff8f47a-d380-4624-85ef-e2c31a4d4ee0_01_original.jpg",
+    "preprocessed": "results/simulation/3ff8f47a-d380-4624-85ef-e2c31a4d4ee0_02_preprocessed.jpg",
+    "segmentation": "results/simulation/3ff8f47a-d380-4624-85ef-e2c31a4d4ee0_03_segmentation.jpg",
+    "classification": "results/simulation/3ff8f47a-d380-4624-85ef-e2c31a4d4ee0_04_classification.jpg",
+    "final": "results/simulation/3ff8f47a-d380-4624-85ef-e2c31a4d4ee0_05_final_analysis.jpg",
+    "grid": "results/simulation/3ff8f47a-d380-4624-85ef-e2c31a4d4ee0_grid_summary.jpg"
+  }
+}
