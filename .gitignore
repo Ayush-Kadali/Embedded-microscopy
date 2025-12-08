@@ -1,0 +1,103 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Results and outputs
+results/*.csv
+results/*.json
+results/*.html
+!results/.gitkeep
+
+# Models (keep placeholders, ignore large files)
+models/*.tflite
+models/*.onnx
+models/*.h5
+models/*.pb
+!models/.gitkeep
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Data
+data/
+*.jpg
+*.png
+*.jpeg
+*.tiff
+*.raw
+
+# Datasets (too large for git)
+datasets/raw/
+datasets/processed/
+datasets/*.zip
+datasets/*.tar.gz
+
+# Presentation materials (large files)
+presentation/screenshots/*.png
+presentation/screenshots/*.jpg
+presentation/video/*.mp4
+presentation/video/*.mov
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+temp_*
+
+# Backup files
+*.backup
+*.bak
+*-backup/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets and credentials
+config/secrets.yaml
+config/credentials.json
+*.key
+*.pem
+
+# Editor backups
+*~
+.*.sw[po]

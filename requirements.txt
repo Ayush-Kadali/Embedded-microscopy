@@ -1,0 +1,40 @@
+# Core dependencies for Marine Plankton AI Microscopy System
+
+# Image processing
+numpy>=1.24.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+
+# Configuration
+PyYAML>=6.0
+
+# Machine Learning (for classification module)
+# TensorFlow Lite for edge inference
+# tflite-runtime>=2.14.0  # Uncomment for Raspberry Pi
+# For development on non-RPi systems:
+# tensorflow>=2.14.0
+
+# Optional: ONNX Runtime (alternative to TFLite)
+# onnxruntime>=1.16.0
+
+# Microscope camera (Raspberry Pi specific)
+# picamera2>=0.3.0  # Uncomment for Raspberry Pi
+# libcamera  # System package, install via apt
+
+# Dashboard and visualization (optional)
+streamlit>=1.28.0
+plotly>=5.17.0
+folium>=0.15.0
+pandas>=2.1.0
+
+# Utilities
+python-dateutil>=2.8.2
+
+# Development and testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.0.0
+flake8>=6.1.0
+
+# Logging and monitoring (optional)
+# python-json-logger>=2.0.7

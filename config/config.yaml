@@ -1,0 +1,64 @@
+pipeline:
+  name: "Marine Plankton AI Microscope"
+  version: "1.0.0"
+  description: "Embedded intelligent microscopy system for marine organism identification"
+
+acquisition:
+  camera_type: "pi_hq"
+  default_magnification: 2.0
+  default_exposure_ms: 100
+  sensor_pixel_size_um: 1.55
+  # For production: Add picamera2 specific settings
+  # picamera2_config:
+  #   resolution: [4056, 3040]
+  #   format: "RGB888"
+
+preprocessing:
+  denoise_method: "bilateral"  # Options: "gaussian" | "bilateral" | "nlm" | "none"
+  normalize: true
+  background_correction: true
+  flatfield_correction: false
+  illumination_profile: null
+
+segmentation:
+  method: "watershed"  # Options: "threshold" | "watershed" | "instance_seg"
+  min_area_px: 100
+  max_area_px: 50000
+  handle_overlaps: true
+  model_path: null  # For instance_seg method
+
+classification:
+  model_path: "./models/plankton_classifier_v1.tflite"
+  class_names:
+    - "Copepod"
+    - "Diatom"
+    - "Dinoflagellate"
+    - "Ciliate"
+    - "Other"
+  confidence_threshold: 0.7
+  top_k: 3
+  # For production: Add model-specific settings
+  # input_size: [224, 224]
+  # preprocessing: "mobilenet"  # or "resnet", etc.
+
+counting:
+  confidence_threshold: 0.7
+  size_range_um: [10, 1000]
+  count_by_class: true
+
+analytics:
+  compute_diversity: true
+  compute_composition: true
+  bloom_thresholds:
+    Dinoflagellate: 5000  # HAB threshold
+    Diatom: 10000
+  # For production: Add historical data path
+  # historical_data_path: "./data/historical.csv"
+
+export:
+  output_dir: "./results"
+  generate_dashboard: true
+  export_images: false
+  # For production: Add export options
+  # export_formats: ["csv", "json", "parquet"]
+  # dashboard_port: 8501
