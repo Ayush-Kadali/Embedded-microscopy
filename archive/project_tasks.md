@@ -2,7 +2,7 @@
 
 **Project Goal:** Build a working embedded intelligent microscopy system that identifies and counts microscopic marine organisms for SIH 2025 finals.
 
-**Core System:** Raspberry Pi 4/5 + IMX477 HQ Camera + 300X C-mount Macro Lens + LED backlight + TFLite CNN model + FastAPI + Streamlit Dashboard
+**Core System:** Raspberry Pi 4/5 + IMX477 HQ Camera (directly attached to microscope) + LED backlight + TFLite CNN model + FastAPI + Streamlit Dashboard
 
 **Pipeline:** Capture → Preprocess → Segment → Classify → Count → Store → Visualize
 
@@ -21,7 +21,7 @@
   ```
 - [ ] Connect IMX477 HQ Camera to Pi CSI port
 - [ ] Test camera: `libcamera-hello --list-cameras` and `libcamera-jpeg -o test.jpg`
-- [ ] Connect 300X C-mount macro lens to IMX477
+- [ ] Attach camera directly to microscope
 - [ ] Set up LED backlight on GPIO pin (test with simple on/off script)
 - [ ] Create local storage structure:
   ```

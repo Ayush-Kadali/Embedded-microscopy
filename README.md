@@ -49,15 +49,17 @@ Counting → Analytics → Export (CSV/JSON)
 | Component | Status | Notes |
 |-----------|--------|-------|
 | Pipeline Architecture | 🟢 Complete | All 7 modules integrated |
-| Preprocessing | 🟡 Needs Work | OpenCV-based image enhancement |
-| Segmentation | 🔴 Not Started | Watershed algorithm |
-| Classification | 🟡 Needs Work | Needs trained model |
-| Counting & Analytics | 🔴 Not Started | All metrics calculated |
-| Export | 🔴 Not Started | CSV/JSON generation |
+| Preprocessing | 🟢 Working | OpenCV-based image enhancement |
+| Segmentation | 🟢 Working | Watershed algorithm detecting organisms |
+| Classification | 🟢 **WORKING!** | **CNN model trained & integrated** ✅ |
+| Counting & Analytics | 🟢 Working | All metrics calculated |
+| Export | 🟢 Working | CSV/JSON generation |
 | Dashboard | 🟡 Stub | Needs Streamlit implementation |
-| Testing | 🔴 Not Started | 18/19 tests passing |
+| Real Data Testing | 🟢 Complete | Tested with Kaggle plankton dataset |
 
-**Legend**: 🟢 Production Ready | 🟡 Needs Work | 🔴 Not Started
+**Legend**: 🟢 Working | 🟡 Needs Improvement | 🔴 Not Started
+
+**Latest Update (Dec 9, 2025)**: ✅ Real classification model trained and integrated! System now performs actual ML-based species classification. See `CLASSIFIER_INTEGRATION_SUMMARY.md` for details.
 
 ---
 
@@ -341,8 +343,7 @@ pip install -r requirements.txt
 
 ### Production
 - Raspberry Pi 4 (4GB recommended)
-- Raspberry Pi HQ Camera
-- Seeed 300X Microscope Lens (0.7-4.5x)
+- Raspberry Pi HQ Camera (directly attached to microscope)
 - GPS module (optional)
 
 ---
@@ -476,7 +477,6 @@ cat docs/CONTRACTS.md
 ## Acknowledgments
 
 - Architecture based on modular pipeline design
-- Seeed 300X Microscope Lens specifications
 - Raspberry Pi Foundation
 
 ---

@@ -11,7 +11,7 @@ Use this template to assign modules to team members and track progress.
 - **Branch**: `feature/acquisition`
 - **Key Tasks**:
   - [ ] Integrate Picamera2 library
-  - [ ] Calibrate µm/pixel for magnifications 0.7-4.5x
+  - [ ] Calibrate µm/pixel for microscope magnification settings
   - [ ] Add GPS module integration (gpsd)
   - [ ] Implement auto-exposure algorithm
   - [ ] Add error handling for camera failures
@@ -275,7 +275,6 @@ Quantized to INT8 for edge deployment.
 
 ### Hardware Vendors
 - Raspberry Pi: [raspberrypi.com](https://www.raspberrypi.com/)
-- Seeed 300X Lens: [seeedstudio.com](https://www.seeedstudio.com/)
 - GPS modules: Multiple vendors
 
 ### Reference Papers

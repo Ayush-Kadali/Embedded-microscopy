@@ -2,6 +2,8 @@
 **Location: Pune, India**
 **Delivery Target: 2-5 days**
 
+**Note:** This list is for reference. The current implementation uses the Raspberry Pi HQ Camera directly attached to the microscope (not using the Waveshare 100x microscope lens, as it causes blur issues).
+
 ---
 
 ## Option A: High-Performance Setup (Recommended)

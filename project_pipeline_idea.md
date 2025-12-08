@@ -61,7 +61,7 @@ Each bracket is a module; the pipeline manager just wires modules together and h
 
 ```python
 AcquisitionInput = dict(
-    magnification=float,          # 0.7–4.5 (Seeed 300X lens range)[file:1]
+    magnification=float,          # microscope magnification setting
     exposure_ms=int,              # exposure in ms
     focus_position=int | None,    # optional motor stage position
     capture_metadata=dict(
@@ -86,8 +86,8 @@ AcquisitionOutput = dict(
         gps_coordinates=list[float] | None,  # [lat, lon]
         magnification=float,
         exposure_ms=int,
-        resolution_um_per_px=float,          # ~1.55 / M for Pi HQ sensor[file:1]
-        fov_mm=list[float],       # [width_mm, height_mm][file:1]
+        resolution_um_per_px=float,          # calibrated resolution for Pi HQ sensor
+        fov_mm=list[float],       # [width_mm, height_mm]
         sensor_temp_c=float | None,
     ),
 )

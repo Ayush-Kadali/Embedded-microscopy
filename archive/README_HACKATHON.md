@@ -261,8 +261,7 @@ result = manager.execute_pipeline(acquisition_params)
 
 ### Production Target
 - Raspberry Pi 4 (4GB)
-- Raspberry Pi HQ Camera
-- Seeed 300X Microscope Lens
+- Raspberry Pi HQ Camera (directly attached to microscope)
 - Optional: GPS module
 
 ---
@@ -451,7 +450,6 @@ export PYTHONPATH="${PYTHONPATH}:$(pwd)"
 ## Acknowledgments
 
 - Based on architecture from `project_pipeline_idea.md`
-- Seeed 300X Microscope Lens specifications
 - Raspberry Pi Foundation
 
 ---
