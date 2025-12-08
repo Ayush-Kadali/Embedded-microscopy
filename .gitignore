@@ -101,3 +101,4 @@ config/credentials.json
 # Editor backups
 *~
 .*.sw[po]
+external_test_images/
