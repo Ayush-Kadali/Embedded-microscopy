@@ -49,13 +49,13 @@ Counting → Analytics → Export (CSV/JSON)
 | Component | Status | Notes |
 |-----------|--------|-------|
 | Pipeline Architecture | 🟢 Complete | All 7 modules integrated |
-| Preprocessing | 🟢 Working | OpenCV-based image enhancement |
-| Segmentation | 🟢 Working | Watershed algorithm |
-| Classification | 🟡 Stub | Needs trained model |
-| Counting & Analytics | 🟢 Complete | All metrics calculated |
-| Export | 🟢 Working | CSV/JSON generation |
+| Preprocessing | 🟡 Needs Work | OpenCV-based image enhancement |
+| Segmentation | 🔴 Not Started | Watershed algorithm |
+| Classification | 🟡 Needs Work | Needs trained model |
+| Counting & Analytics | 🔴 Not Started | All metrics calculated |
+| Export | 🔴 Not Started | CSV/JSON generation |
 | Dashboard | 🟡 Stub | Needs Streamlit implementation |
-| Testing | 🟢 95% Pass | 18/19 tests passing |
+| Testing | 🔴 Not Started | 18/19 tests passing |
 
 **Legend**: 🟢 Production Ready | 🟡 Needs Work | 🔴 Not Started
 
