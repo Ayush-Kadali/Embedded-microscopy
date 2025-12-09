@@ -63,7 +63,17 @@ class ClassificationModuleReal(PipelineModule):
             self.logger.warning("TensorFlow not available, using stub mode")
             return False
 
-        model_path = self.config.get('model_path', 'models/plankton_classifier.keras')
+        # Try best checkpoint first (EfficientNetB0 transfer learning)
+        checkpoint_path = 'models/best_model_checkpoint.keras'
+        if Path(checkpoint_path).exists():
+            model_path = checkpoint_path
+            # EfficientNetB0 requires 224x224 input
+            self.input_size = 224
+            self.logger.info("Using EfficientNetB0 transfer learning model")
+        else:
+            # Fall back to regular model
+            model_path = self.config.get('model_path', 'models/plankton_classifier.keras')
+
         metadata_path = 'models/model_metadata.pkl'
 
         if not Path(model_path).exists():
@@ -75,13 +85,15 @@ class ClassificationModuleReal(PipelineModule):
             self.model = tf.keras.models.load_model(model_path)
             self.logger.info(f"Loaded model from {model_path}")
 
-            # Load metadata
+            # Load metadata for class names
             if Path(metadata_path).exists():
                 with open(metadata_path, 'rb') as f:
                     metadata = pickle.load(f)
                     self.class_names = metadata['class_names']
-                    self.input_size = metadata['input_size']
-                    self.logger.info(f"Loaded {len(self.class_names)} classes")
+                    # Only use metadata input_size if not using checkpoint
+                    if model_path != checkpoint_path:
+                        self.input_size = metadata.get('input_size', 128)
+                    self.logger.info(f"Loaded {len(self.class_names)} classes, input size: {self.input_size}")
             else:
                 # Try loading just class names
                 class_names_path = 'models/class_names.pkl'

@@ -58,7 +58,7 @@ analytics:
 export:
   output_dir: "./results"
   generate_dashboard: true
-  export_images: false
+  export_images: true
   # For production: Add export options
   # export_formats: ["csv", "json", "parquet"]
   # dashboard_port: 8501
