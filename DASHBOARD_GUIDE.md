@@ -1,15 +1,20 @@
-# Marine Plankton AI Microscopy Dashboard - User Guide
+# 🔬 Comprehensive Dashboard - Quick Start Guide
 
-## Quick Start
+## 🚀 Launch the Dashboard
 
-### Running the Dashboard
+### Easiest Way (One Command):
 
 ```bash
-# Activate virtual environment
-source .venv/bin/activate
+./run_dashboard.sh
+```
 
-# Start the dashboard
-streamlit run dashboard/app.py
+Then open your browser to: **http://localhost:8501**
+
+### Manual Way:
+
+```bash
+source .venv/bin/activate
+streamlit run dashboard/app_comprehensive.py
 ```
 
 The dashboard will automatically open in your default web browser at:

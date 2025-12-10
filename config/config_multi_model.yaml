@@ -1,0 +1,81 @@
+pipeline:
+  name: "Marine Plankton AI Microscope - Multi-Model"
+  version: "2.0.0"
+  description: "Multi-model classification system with ensemble support"
+
+acquisition:
+  camera_type: "pi_hq"
+  default_magnification: 2.0
+  default_exposure_ms: 100
+  sensor_pixel_size_um: 1.55
+
+preprocessing:
+  denoise_method: "bilateral"
+  normalize: true
+  background_correction: true
+  flatfield_correction: false
+  illumination_profile: null
+
+segmentation:
+  method: "watershed"
+  min_area_px: 100
+  max_area_px: 50000
+  handle_overlaps: true
+  model_path: null
+
+classification:
+  # MULTI-MODEL CONFIGURATION
+  # mode: 'model_1' | 'model_2' | 'ensemble'
+  mode: "ensemble"  # Switch between models or use ensemble
+
+  # Model paths
+  model_1_path: "models/plankton_classifier.keras"  # Original model
+  model_2_path: "models/plankton_mobilenet_v2_best.keras"  # MobileNetV2 model
+
+  # Ensemble weights (must sum to 1.0)
+  # [model_1_weight, model_2_weight]
+  ensemble_weights: [0.5, 0.5]  # Equal weighting
+
+  # Confidence threshold
+  confidence_threshold: 0.3
+  top_k: 3
+
+  # Class names (19 classes from dataset)
+  class_names:
+    - "Alexandrium"
+    - "Asterionellopsis glacialis"
+    - "Cerataulina"
+    - "Ceratium"
+    - "Chaetoceros"
+    - "Entomoneis"
+    - "Guinardia"
+    - "Hemiaulus"
+    - "Lauderia annulata"
+    - "Nitzschia"
+    - "Noctiluca"
+    - "Ornithocercus magnificus"
+    - "Pinnularia"
+    - "Pleurosigma"
+    - "Prorocentrum"
+    - "Protoperidinium"
+    - "Pyrodinium"
+    - "Thalassionema"
+    - "Thalassiosira"
+
+counting:
+  confidence_threshold: 0.3
+  size_range_um: [10, 1000]
+  count_by_class: true
+
+analytics:
+  compute_diversity: true
+  compute_composition: true
+  bloom_thresholds:
+    Alexandrium: 5000
+    Dinoflagellate: 5000
+    Diatom: 10000
+
+export:
+  output_dir: "./results"
+  generate_dashboard: true
+  export_images: true

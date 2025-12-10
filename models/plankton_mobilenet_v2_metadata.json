@@ -1,0 +1,33 @@
+{
+  "model_name": "plankton_mobilenet_v2",
+  "num_classes": 19,
+  "class_names": [
+    "Alexandrium",
+    "Asterionellopsis glacialis",
+    "Cerataulina",
+    "Ceratium",
+    "Chaetoceros",
+    "Entomoneis",
+    "Guinardia",
+    "Hemiaulus",
+    "Lauderia annulata",
+    "Nitzschia",
+    "Noctiluca",
+    "Ornithocercus magnificus",
+    "Pinnularia",
+    "Pleurosigma",
+    "Prorocentrum",
+    "Protoperidinium",
+    "Pyrodinium",
+    "Thalassionema",
+    "Thalassiosira"
+  ],
+  "input_shape": [
+    128,
+    128,
+    3
+  ],
+  "architecture": "MobileNetV2 + Custom Head",
+  "training_stage": "Phase 1 (Transfer Learning)",
+  "note": "Best Phase 1 model (14% val accuracy)"
+}

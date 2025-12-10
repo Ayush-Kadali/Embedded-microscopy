@@ -1,0 +1,28 @@
+Validation Accuracy: 5.39%
+
+Classification Report:
+                            precision    recall  f1-score   support
+
+               Alexandrium      0.000     0.000     0.000        30
+Asterionellopsis glacialis      0.000     0.000     0.000        30
+               Cerataulina      0.000     0.000     0.000        30
+                  Ceratium      0.000     0.000     0.000        30
+               Chaetoceros      0.000     0.000     0.000        30
+                Entomoneis      0.067     1.000     0.125        30
+                 Guinardia      0.000     0.000     0.000        30
+                 Hemiaulus      0.000     0.000     0.000        30
+         Lauderia annulata      0.000     0.000     0.000        31
+                 Nitzschia      0.000     0.000     0.000        31
+                 Noctiluca      0.009     0.033     0.014        30
+  Ornithocercus magnificus      0.000     0.000     0.000        30
+                Pinnularia      0.000     0.000     0.000        30
+               Pleurosigma      0.000     0.000     0.000        31
+              Prorocentrum      0.000     0.000     0.000        31
+           Protoperidinium      0.000     0.000     0.000        30
+                Pyrodinium      0.000     0.000     0.000        30
+             Thalassionema      0.000     0.000     0.000        31
+             Thalassiosira      0.000     0.000     0.000        30
+
+                  accuracy                          0.054       575
+                 macro avg      0.004     0.054     0.007       575
+              weighted avg      0.004     0.054     0.007       575
